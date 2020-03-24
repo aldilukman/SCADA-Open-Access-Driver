@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F3E2D6D-E5DB-4635-BCE4-2DC8028E5E29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Len.Jakpro.ClassOpenAccess</RootNamespace>
+    <AssemblyName>Len.Jakpro.ClassOpenAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Len.Jakpro.AddInSampleLibrary">
+      <HintPath>..\Len.Jakpro.AddInSampleLibrary\bin\Debug\Len.Jakpro.AddInSampleLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleTCP, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleTCP.1.0.24\lib\net45\SimpleTCP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Len Jakpro Library Open Access Observer Events\CallObserver.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Alarm.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AlarmArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AnnouncementInterruptMode.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AnnouncementPriorityMode.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AnnouncementResumeMode.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AnnouncementState.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AnnouncementSyncMode.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AnnouncementType.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AudioServer.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AudioServerObserver.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AUDIOSERVER_INFO.cs" />
+    <Compile Include="Len Jakpro Library Open Access\AUDIO_EVT.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CallController.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CallControllerObserver.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CallInfo.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CallInfoArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CALLSTATE.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CALLTYPE.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CDRInfo.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CDRInfoArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CFG_MANAGER_RESOURCE_INFO.cs" />
+    <Compile Include="Len Jakpro Library Open Access\CODEC.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ConfigController.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Device.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DeviceClassMap.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DeviceModel.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DeviceStateArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DeviceStateArrayPtr.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DictionaryChangesetItem.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DictionaryChangesetItemArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DictionaryItem.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DictionaryItemArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DisplayValueList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DisplayVariableValueMap.cs" />
+    <Compile Include="Len Jakpro Library Open Access\DISPLAY_VALUE_INFO.cs" />
+    <Compile Include="Len Jakpro Library Open Access\EventItem.cs" />
+    <Compile Include="Len Jakpro Library Open Access\EventItemArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Gain.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ICI_PORT_DEF.cs" />
+    <Compile Include="Len Jakpro Library Open Access\IntValueMap.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ISDNTrunk.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ISDNTrunkList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\KeyValueMap.cs" />
+    <Compile Include="Len Jakpro Library Open Access\LineList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Message.cs" />
+    <Compile Include="Len Jakpro Library Open Access\MessagePriority.cs" />
+    <Compile Include="Len Jakpro Library Open Access\MessageTriggerStatus.cs" />
+    <Compile Include="Len Jakpro Library Open Access\NamedId.cs" />
+    <Compile Include="Len Jakpro Library Open Access\netspireSDK.cs" />
+    <Compile Include="Len Jakpro Library Open Access\netspireSDKPINVOKE.cs" />
+    <Compile Include="Len Jakpro Library Open Access\NumberArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PAController.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PAControllerObserver.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSelector.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSelectorArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSink.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSinkAmplifierPortInfo.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSinkAmplifierPortInfoList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSinkArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSource.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSourceArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSourceLockStatus.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PassengerInformationObserver.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PassengerInformationServer.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaSWTrigger.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaTrigger.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaTriggerArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaZone.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PaZoneArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PlatformInfo.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PlatformInfoList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\PlayMessageParams.cs" />
+    <Compile Include="Len Jakpro Library Open Access\RELATIVE_PRIORITY_LEVELS.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ScheduleDefinition.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ScheduleDefinitionArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Service.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ServiceList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ServiceStop.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ServiceStopList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SIPTrunk.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SIPTrunkList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Station.cs" />
+    <Compile Include="Len Jakpro Library Open Access\StationList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\StringArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SWIGTYPE_p_std__listT_PaSinkAmplifierPortInfo_t.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SWIGTYPE_p_std__mapT_int_std__string_std__lessT_int_t_t.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t__key_type.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t__mapped_type.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t__size_type.cs" />
+    <Compile Include="Len Jakpro Library Open Access\SWIGTYPE_p_time_t.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TerminalInfo.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TerminalInfoArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Trip.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TripList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TripStop.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TripStopList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Trunk.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TRUNK_STATUS.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TRUNK_TYPE.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TTSDictionary.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TTSPendingInfo.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TTSVocalizer.cs" />
+    <Compile Include="Len Jakpro Library Open Access\TTSVocalizerArray.cs" />
+    <Compile Include="Len Jakpro Library Open Access\Vehicle.cs" />
+    <Compile Include="Len Jakpro Library Open Access\VehicleList.cs" />
+    <Compile Include="Len Jakpro Library Open Access\VisualDisplay.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ZoneActivityStatus.cs" />
+    <Compile Include="Len Jakpro Library Open Access\ZoneHealthStatus.cs" />
+    <Compile Include="Len Jakpro Library Open Access Observer Events\AudioObserver.cs" />
+    <Compile Include="Len Jakpro Library Open Access Observer Events\PAObserver.cs" />
+    <Compile Include="Logging\NLogConfigurator.cs" />
+    <Compile Include="Model Train\TrainTable.cs" />
+    <Compile Include="OpenAccessDriver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Other Files\NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Logging\packages.config" />
+    <None Include="Other Files\NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Other Files\packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Len.Jakpro.Database.Class\Len.Jakpro.Database.Rendudancy.csproj">
+      <Project>{c98bb24f-50c2-4d30-b4d4-e6a46efeacd9}</Project>
+      <Name>Len.Jakpro.Database.Rendudancy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

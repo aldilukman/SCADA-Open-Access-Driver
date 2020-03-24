@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95413407-48B9-4DAA-A85A-9949868DA793}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDKTester</RootNamespace>
+    <AssemblyName>SDKTester</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="connectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connectDialog.Designer.cs">
+      <DependentUpon>connectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OAInclude\Alarm.cs" />
+    <Compile Include="OAInclude\AlarmArray.cs" />
+    <Compile Include="OAInclude\AnnouncementInterruptMode.cs" />
+    <Compile Include="OAInclude\AnnouncementPriorityMode.cs" />
+    <Compile Include="OAInclude\AnnouncementResumeMode.cs" />
+    <Compile Include="OAInclude\AnnouncementState.cs" />
+    <Compile Include="OAInclude\AnnouncementSyncMode.cs" />
+    <Compile Include="OAInclude\AnnouncementType.cs" />
+    <Compile Include="OAInclude\ANNOUNCEMENT_REQUEST.cs" />
+    <Compile Include="OAInclude\AudioServer.cs" />
+    <Compile Include="OAInclude\AudioServerObserver.cs" />
+    <Compile Include="OAInclude\AUDIOSERVER_INFO.cs" />
+    <Compile Include="OAInclude\AUDIO_EVT.cs" />
+    <Compile Include="OAInclude\CallController.cs" />
+    <Compile Include="OAInclude\CallControllerObserver.cs" />
+    <Compile Include="OAInclude\CallInfo.cs" />
+    <Compile Include="OAInclude\CallInfoArray.cs" />
+    <Compile Include="OAInclude\CALLSTATE.cs" />
+    <Compile Include="OAInclude\CALLTYPE.cs" />
+    <Compile Include="OAInclude\CDRInfo.cs" />
+    <Compile Include="OAInclude\CDRInfoArray.cs" />
+    <Compile Include="OAInclude\CFG_MANAGER_RESOURCE_INFO.cs" />
+    <Compile Include="OAInclude\CODEC.cs" />
+    <Compile Include="OAInclude\ConfigController.cs" />
+    <Compile Include="OAInclude\Device.cs" />
+    <Compile Include="OAInclude\DeviceClassMap.cs" />
+    <Compile Include="OAInclude\DeviceModel.cs" />
+    <Compile Include="OAInclude\DeviceStateArray.cs" />
+    <Compile Include="OAInclude\DeviceStateArrayPtr.cs" />
+    <Compile Include="OAInclude\DictionaryChangesetItem.cs" />
+    <Compile Include="OAInclude\DictionaryChangesetItemArray.cs" />
+    <Compile Include="OAInclude\DictionaryItem.cs" />
+    <Compile Include="OAInclude\DictionaryItemArray.cs" />
+    <Compile Include="OAInclude\DisplayValueList.cs" />
+    <Compile Include="OAInclude\DisplayVariableValueMap.cs" />
+    <Compile Include="OAInclude\DISPLAY_VALUE_INFO.cs" />
+    <Compile Include="OAInclude\EventItem.cs" />
+    <Compile Include="OAInclude\EventItemArray.cs" />
+    <Compile Include="OAInclude\Gain.cs" />
+    <Compile Include="OAInclude\ICI_PORT_DEF.cs" />
+    <Compile Include="OAInclude\IntValueMap.cs" />
+    <Compile Include="OAInclude\ISDNTrunk.cs" />
+    <Compile Include="OAInclude\ISDNTrunkList.cs" />
+    <Compile Include="OAInclude\KeyValueMap.cs" />
+    <Compile Include="OAInclude\LineList.cs" />
+    <Compile Include="OAInclude\Message.cs" />
+    <Compile Include="OAInclude\MessagePriority.cs" />
+    <Compile Include="OAInclude\MessageTriggerStatus.cs" />
+    <Compile Include="OAInclude\NamedId.cs" />
+    <Compile Include="OAInclude\netspireSDK.cs" />
+    <Compile Include="OAInclude\netspireSDKPINVOKE.cs" />
+    <Compile Include="OAInclude\NumberArray.cs" />
+    <Compile Include="OAInclude\PAController.cs" />
+    <Compile Include="OAInclude\PAControllerObserver.cs" />
+    <Compile Include="OAInclude\PaSelector.cs" />
+    <Compile Include="OAInclude\PaSelectorArray.cs" />
+    <Compile Include="OAInclude\PaSink.cs" />
+    <Compile Include="OAInclude\PaSinkArray.cs" />
+    <Compile Include="OAInclude\PaSource.cs" />
+    <Compile Include="OAInclude\PaSourceArray.cs" />
+    <Compile Include="OAInclude\PaSourceLockStatus.cs" />
+    <Compile Include="OAInclude\PassengerInformationObserver.cs" />
+    <Compile Include="OAInclude\PassengerInformationServer.cs" />
+    <Compile Include="OAInclude\PaSWTrigger.cs" />
+    <Compile Include="OAInclude\PaTrigger.cs" />
+    <Compile Include="OAInclude\PaTriggerArray.cs" />
+    <Compile Include="OAInclude\PaZone.cs" />
+    <Compile Include="OAInclude\PaZoneArray.cs" />
+    <Compile Include="OAInclude\PlatformInfo.cs" />
+    <Compile Include="OAInclude\PlatformInfoList.cs" />
+    <Compile Include="OAInclude\PlayMessageParams.cs" />
+    <Compile Include="OAInclude\RELATIVE_PRIORITY_LEVELS.cs" />
+    <Compile Include="OAInclude\ScheduleDefinition.cs" />
+    <Compile Include="OAInclude\ScheduleDefinitionArray.cs" />
+    <Compile Include="OAInclude\Service.cs" />
+    <Compile Include="OAInclude\ServiceList.cs" />
+    <Compile Include="OAInclude\ServiceStop.cs" />
+    <Compile Include="OAInclude\ServiceStopList.cs" />
+    <Compile Include="OAInclude\SIPTrunk.cs" />
+    <Compile Include="OAInclude\SIPTrunkList.cs" />
+    <Compile Include="OAInclude\Station.cs" />
+    <Compile Include="OAInclude\StationList.cs" />
+    <Compile Include="OAInclude\StringArray.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__listT_NamedId_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__listT_ServiceStop_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__listT_Service_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__listT_Station_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__listT_Vehicle_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__mapT_int_PlatformInfo_std__lessT_int_t_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__mapT_int_std__string_std__lessT_int_t_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t__key_type.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t__mapped_type.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__mapT_std__string_Device__DeviceClass_std__lessT_std__string_t_t__size_type.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_std__vectorT_int_t.cs" />
+    <Compile Include="OAInclude\SWIGTYPE_p_time_t.cs" />
+    <Compile Include="OAInclude\TerminalInfo.cs" />
+    <Compile Include="OAInclude\TerminalInfoArray.cs" />
+    <Compile Include="OAInclude\Trip.cs" />
+    <Compile Include="OAInclude\TripList.cs" />
+    <Compile Include="OAInclude\TripStop.cs" />
+    <Compile Include="OAInclude\TripStopList.cs" />
+    <Compile Include="OAInclude\Trunk.cs" />
+    <Compile Include="OAInclude\TRUNK_STATUS.cs" />
+    <Compile Include="OAInclude\TRUNK_TYPE.cs" />
+    <Compile Include="OAInclude\TTSDictionary.cs" />
+    <Compile Include="OAInclude\TTSPendingInfo.cs" />
+    <Compile Include="OAInclude\TTSVocalizer.cs" />
+    <Compile Include="OAInclude\TTSVocalizerArray.cs" />
+    <Compile Include="OAInclude\Vehicle.cs" />
+    <Compile Include="OAInclude\VehicleList.cs" />
+    <Compile Include="OAInclude\VisualDisplay.cs" />
+    <Compile Include="OAInclude\ZoneActivityStatus.cs" />
+    <Compile Include="OAInclude\ZoneHealthStatus.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="connectDialog.resx">
+      <DependentUpon>connectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.af.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

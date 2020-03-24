@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PIController.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="OAIncludes\AudioServer.hpp" />
+    <ClInclude Include="OAIncludes\AudioServerObserver.hpp" />
+    <ClInclude Include="OAIncludes\CallController.hpp" />
+    <ClInclude Include="OAIncludes\callInfo.h" />
+    <ClInclude Include="OAIncludes\ConfigController.hpp" />
+    <ClInclude Include="OAIncludes\Device.hpp" />
+    <ClInclude Include="OAIncludes\DeviceModel.hpp" />
+    <ClInclude Include="OAIncludes\DeviceTypes.hpp" />
+    <ClInclude Include="OAIncludes\DictionaryWorkerThread.hpp" />
+    <ClInclude Include="OAIncludes\dvalist.h" />
+    <ClInclude Include="OAIncludes\ftplib.h" />
+    <ClInclude Include="OAIncludes\FTPSession.h" />
+    <ClInclude Include="OAIncludes\FTPWorkerThread.hpp" />
+    <ClInclude Include="OAIncludes\Gain.hpp" />
+    <ClInclude Include="OAIncludes\KeyValueMap.hpp" />
+    <ClInclude Include="OAIncludes\localMutex.h" />
+    <ClInclude Include="OAIncludes\lock.hpp" />
+    <ClInclude Include="OAIncludes\PAController.hpp" />
+    <ClInclude Include="OAIncludes\paInfo.hpp" />
+    <ClInclude Include="OAIncludes\priorityInfo.h" />
+    <ClInclude Include="OAIncludes\SignallingController.hpp" />
+    <ClInclude Include="OAIncludes\StandardIncludes.hpp" />
+    <ClInclude Include="OAIncludes\termInfo.h" />
+    <ClInclude Include="OAIncludes\threadClass.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2FB90339-5366-4EAF-B902-E07E97D00256}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>NetspireSDKTesterC</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>OAIncludes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\VS2015_ProjectFiles\Release_C++;OALib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>netspireSDK.lib;skeleton_tcp.lib;zlib.lib;FTPlib.lib;Rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

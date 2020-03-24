@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Len.Jakpro.WPF.PID.Views.UserControlPID"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Len.Jakpro.WPF.PA.Views"
+             mc:Ignorable="d" Width="831.292" Height="488.222">
+
+    <Grid Margin="0,0,0.2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="268*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="DatagridView" 
+                  HorizontalAlignment="Left" 
+                  Margin="0,-4,0,0" 
+                  ColumnWidth="*" 
+                  VerticalAlignment="Stretch" 
+                  Loaded="DatagridView_Loaded" IsReadOnly="True" Width="831" Grid.ColumnSpan="2"  SelectionChanged="DatagridView_SelectionChanged"/>
+    </Grid>
+</UserControl>

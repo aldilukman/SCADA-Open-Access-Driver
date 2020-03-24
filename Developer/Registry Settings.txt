@@ -1,0 +1,30 @@
+ rkey = rkey.CreateSubKey
+                ("Software\\Len.Jakpro.OpenAccess\\Addins\\Depo", true);
+
+            rkey.SetValue("DPD_PA_SET_A", "Depo/Public Area/A");
+            rkey.SetValue("DPD_PA_SET_B", "Depo/Public Area/B");
+            rkey.SetValue("DPD_PA_SET_C", "Depo/Public Area/C");
+            rkey.SetValue("DPD_PA_SET_D", "Depo/Public Area/I");
+            rkey.SetValue("DPD_NPA_SET_A","Depo/Non-Public Area/A BOH");
+            rkey.SetValue("DPD_NPA_SET_B","Depo/Non-Public Area/B BOH");
+            rkey.SetValue("DPD_NPA_SET_C","Depo/Non-Public Area/C BOH");
+            rkey.SetValue("DPD_NPA_SET_D","Depo/Non-Public Area/D");
+            rkey.SetValue("DPD_NPA_SET_E","Depo/Non-Public Area/H");
+            rkey.SetValue("DPD_PF_SET_A", "Depo/Non-Public Area/E");
+            rkey.SetValue("DPD_PF_SET_B", "Depo/Non-Public Area/E");
+            rkey.SetValue("DPD_PF_SET_C", "Depo/Non-Public Area/E");
+            rkey.SetValue("DPD_PF_SET_D", "Unknown");
+           
+            rkey.Close();
+
+            //opening the subkey  
+            RegistryKey key = Registry.CurrentUser.OpenSubKey
+                ("Software\\Len.Jakpro.OpenAccess\\Addins\\Velodrome");
+
+            //if it does exist, retrieve the stored values  
+            if (key != null)
+            {
+                Console.WriteLine(key.GetValue("VLD_NPA_SET_A"));
+                Console.WriteLine(key.GetValue("VLD_NPA_SET_C"));
+                key.Close();
+            }

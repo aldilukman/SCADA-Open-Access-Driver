@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Len.Jakpro.WPF.PID.Library.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Len.Jakpro.WPF.PID.Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="900">
+    <Grid Background="LightGray" Margin="0,0,0,-0.4">
+        <DataGrid x:Name="GridPID" 
+                  HorizontalAlignment="Left" 
+                  Height="359" 
+                  VerticalAlignment="Top" 
+                  Width="700" 
+                  SelectionChanged="GridPID_SelectionChanged" 
+                  Loaded="GridPID_Loaded" 
+                  IsReadOnly="True" 
+                  AutoGenerateColumns="True" 
+                  Cursor="Hand" 
+                  ColumnWidth="Auto" 
+                  CanUserAddRows="False" 
+                  CanUserResizeColumns="False"
+                  CanUserDeleteRows="False"
+                  SelectionMode="Extended"
+                  RowBackground="LightGray"
+                  HorizontalScrollBarVisibility="Disabled"
+                  Background="LightGray" Margin="97,11,0,0" AutoGeneratingColumn="GridPID_AutoGeneratingColumn" PreviewMouseRightButtonUp="GridPID_PreviewMouseRightButtonUp" 
+                  >
+            
+            <DataGrid.ContextMenu>
+                <ContextMenu BorderBrush="Black" BorderThickness="1">
+                    <MenuItem x:Name="Menu1" Header="Add Text" Click="MenuAddClick"  
+                              />
+                    <MenuItem x:Name="Menu2" Header="Edit Text" Click="MenuEditClick"                                 
+                              />
+                    <MenuItem x:Name="Menu3" Header="Delete Text" Click="MenuDeleteClick"                                 
+                              />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+
+        <RadioButton x:Name="RbPre" Content="Pre Defined" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Cursor="Hand" Checked="RbPre_Checked"/>
+        <RadioButton x:Name="RbCus" Content="Direct Text" HorizontalAlignment="Left" Margin="10,386,0,0" VerticalAlignment="Top" Cursor="Hand" Checked="RbCus_Checked"/>
+        <TextBox x:Name="TxtObject" HorizontalAlignment="Left" Height="50" Margin="97,387,0,0"  VerticalAlignment="Top" Width="700" TextChanged="TxtObject_TextChanged"/>
+    </Grid>
+</UserControl>

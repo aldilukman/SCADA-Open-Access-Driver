@@ -1,0 +1,9 @@
+﻿<Application x:Class="Len.Jakpro.AppTest.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Len.Jakpro.AppTest"
+             StartupUri="Len.Jakpro.WPF.PA.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

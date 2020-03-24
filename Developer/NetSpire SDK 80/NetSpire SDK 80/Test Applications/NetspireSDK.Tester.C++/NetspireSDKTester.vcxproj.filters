@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b59815c2-4ec0-4938-8e06-176f048ac297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7de05aa8-8b91-4144-8cc9-92456d508887}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OA Includes">
+      <UniqueIdentifier>{f3086137-e253-48d3-8df3-79fda0c8424f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="OAIncludes\AudioServer.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\AudioServerObserver.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\CallController.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\ConfigController.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\Device.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\DeviceTypes.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\DictionaryWorkerThread.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\dvalist.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\ftplib.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\FTPSession.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\FTPWorkerThread.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\Gain.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\KeyValueMap.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\localMutex.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\lock.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\PAController.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\StandardIncludes.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\termInfo.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\threadClass.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\paInfo.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\SignallingController.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\DeviceModel.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\callInfo.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\priorityInfo.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\CampaignWorkerThread.hpp">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\signalling_protocol.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\zconf.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\zlib.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="OAIncludes\base64.h">
+      <Filter>OA Includes</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
