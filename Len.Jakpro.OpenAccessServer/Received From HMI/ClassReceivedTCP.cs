@@ -307,6 +307,7 @@ namespace Len.Jakpro.OpenAccessServer
                         }
                     }
 
+                    // Comment 24-03-2020
                     //// Closed connectiion read after used
                     //if (!_Con.SqlRead.IsClosed)
                     //{
@@ -432,7 +433,7 @@ namespace Len.Jakpro.OpenAccessServer
                     #endregion
                     _Data = "";
                     _ZoneData = "";
-                    //added
+                    // Add 24-03-2020
                     _Con.Disconnected();
 
                     _Con.SqlCmd.Parameters.Clear();
