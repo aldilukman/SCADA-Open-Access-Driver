@@ -70,8 +70,7 @@ namespace Len.Jakpro.Database.Rendundancy
         }
         ~Connection()
         {
-            Console.WriteLine("The instance of" +
-                       " Connection class Destroyed");
+          
         }
     }
 }

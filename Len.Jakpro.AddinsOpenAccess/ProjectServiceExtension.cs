@@ -3036,8 +3036,7 @@ namespace Len.Jakpro.AddinsOpenAccess
         // for class ProjectServiceExtension 
         ~ProjectServiceExtension()
         {
-            Console.WriteLine("The instance of" +
-                       " ProjectServiceExtension class Destroyed");
+           
         }
     }
 }

@@ -246,8 +246,7 @@ namespace Len.Jakpro.ClassOpenAccess
         }
         ~AudioObserver()
         {
-            Console.WriteLine("The instance of" +
-                       " PAObserverClass class Destroyed");
+            
         }
     }
 }

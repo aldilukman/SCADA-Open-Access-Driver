@@ -62,8 +62,7 @@ namespace Len.Jakpro.ClassOpenAccess
         // for class ProjectServiceExtension 
         ~OpenAccessDriver()
         {
-            Console.WriteLine("The instance of" +
-                       " OpenAccessDriver class Destroyed");
+          
         }
         #region Communication Driver
         public void StartSend(string IP, int Port)
@@ -1040,11 +1039,11 @@ namespace Len.Jakpro.ClassOpenAccess
                 Console.WriteLine(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + "Velodrome PID Platform West and PID Concourse West " + value1 + ", Line : " + PIDLine);
             }
             // Filter new zone
-            if (PIDZone.Count <= 0)
-            {
-                Console.WriteLine("No Zone For PID");
-                return;
-            }
+            //if (PIDZone.Count <= 0)
+            //{
+            //    Console.WriteLine("No Zone For PID");
+            //    return;
+            //}
             foreach (string zone in PIDZone)
             {
                 //Console.WriteLine("Zone Added: " + zone);

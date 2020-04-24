@@ -59,8 +59,7 @@ namespace Len.Jakpro.RestartDriver
         // for class ProjectServiceExtension 
         ~ProjectWizardExtension()
         {
-            Console.WriteLine("The instance of" +
-                       " ProjectWizardExtension class Destroyed");
+            
         }
     }
 

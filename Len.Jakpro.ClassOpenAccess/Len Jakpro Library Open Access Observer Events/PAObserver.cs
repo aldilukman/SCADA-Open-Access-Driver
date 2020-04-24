@@ -182,8 +182,7 @@ namespace Len.Jakpro.ClassOpenAccess
         }
         ~PAObserverClass()
         {
-            Console.WriteLine("The instance of" +
-                       " PAObserverClass class Destroyed");
+           
         }
     }
 }

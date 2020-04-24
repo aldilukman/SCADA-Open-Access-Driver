@@ -96,8 +96,7 @@ namespace Len.Jakpro.ClassOpenAccess
         }
         ~CallObserverClass()
         {
-            Console.WriteLine("The instance of" +
-                       " CallObserverClass class Destroyed");
+           
         }
         public override void onCallUpdate(CallInfo _CallInfo)
         {

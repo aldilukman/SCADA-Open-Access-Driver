@@ -285,8 +285,7 @@ namespace Len.Jakpro.AddinsPHPService
         // for class ProjectServiceExtension 
         ~ProjectServiceExtension()
         {
-            Console.WriteLine("The instance of" +
-                       " ProjectServiceExtension class Destroyed");
+         
         }
         #endregion
     }

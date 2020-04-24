@@ -777,8 +777,7 @@ namespace Len.Jakpro.OpenAccessServer
         }
         ~ClassReceivedTCP()
         {
-            Console.WriteLine("The instance of" +
-                       " ClassReceivedTCP class Destroyed");
+            
         }
     }
 }

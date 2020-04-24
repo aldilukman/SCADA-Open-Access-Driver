@@ -89,8 +89,7 @@ namespace VariableSubscriptionSample
         // for class ProjectServiceExtension 
         ~ProjectServiceExtension()
         {
-            Console.WriteLine("The instance of" +
-                       " ProjectServiceExtension class Destroyed");
+            
         }
     }
 }
