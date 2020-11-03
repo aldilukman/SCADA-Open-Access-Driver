@@ -276,7 +276,7 @@ namespace Len.Jakpro.AddinsPHPService
                 }
                 _context.VariableCollection["OA.PHP.CCTV.Function"].SetValue(0, " ");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

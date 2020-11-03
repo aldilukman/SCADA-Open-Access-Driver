@@ -22,34 +22,43 @@ namespace Len.Jakpro.ClassOpenAccess
         private int _Port;
         // Database Connection
         private Connection _Con;
-        private Logger _logger = LogManager.GetCurrentClassLogger();
+        private Logger _logger;
         public PAObserverClass(string IP, int Port)
         {
-            _IPServer = IP;
-            _Port = Port;
-            // Get Configuration PA Zone
-            GetTblDynamic("OA_GetDevicePASink", _ListHadwareSinkID);
-            GetTblDynamic("OA_GetDevicePASource", _ListHadwareSourceID);
-            var _logging = new NLogConfigurator();
-            _logging.Configure();
-        }
-        public void GetTblDynamic(string QueryProcedure, List<string> _ListHadwareID)
-        {
-            _Con = new Connection();
-            _Con.Connected();
-            _Con.SqlCmd = new SqlCommand
-            {
-                Connection = _Con.SqlCon,
-                CommandType = CommandType.StoredProcedure,
-                CommandText = QueryProcedure
-            };
             try
             {
+               _logger = LogManager.GetCurrentClassLogger();
+                _IPServer = IP;
+                _Port = Port;
+                // Get Configuration PA Zone
+                GetTblDynamic("OA_GetDevicePASink", _ListHadwareSinkID);
+                GetTblDynamic("OA_GetDevicePASource", _ListHadwareSourceID);
+                var _logging = new NLogConfigurator();
+                _logging.Configure();
+            }
+            catch (Exception e)
+            {
+                _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
+            }          
+        }
+        public void GetTblDynamic(string QueryProcedure, List<string> _ListHadwareID)
+        {            
+            try
+            {
+                _Con = new Connection();
+                _Con.Connected();
+                _Con.SqlCmd = new SqlCommand
+                {
+                    Connection = _Con.SqlCon,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = QueryProcedure
+                };
                 _Con.SqlRead = _Con.SqlCmd.ExecuteReader();
                 while (_Con.SqlRead.Read())
                 {
                     _ListHadwareID.Add(_Con.SqlRead.GetValue(0).ToString());
                 }
+                _Con.Disconnected();
             }
             catch (SqlException e)
             {
@@ -91,7 +100,7 @@ namespace Len.Jakpro.ClassOpenAccess
             }
             else
             {
-                return 1;
+                return 10;
             }
         }
         public int GetCurrentStateMIC(string State)
@@ -116,69 +125,92 @@ namespace Len.Jakpro.ClassOpenAccess
         // Sink Audio Status
         public override void onPaSinkUpdate(PaSink _Devicesink)
         {
-            PaSink _GetPASink = new PaSink(_Devicesink);
-            if (_ListHadwareSinkID.Contains(_GetPASink.id.ToString()))
+            try
             {
-                try
+                PaSink _GetPASink = new PaSink(_Devicesink);
+                if (_ListHadwareSinkID.Contains(_GetPASink.id.ToString()))
                 {
-                    _Con = new Connection();
-                    _Con.Connected();
-                    _Con.SqlCmd = new SqlCommand
+                    try
                     {
-                        Connection = _Con.SqlCon,
-                        CommandType = CommandType.StoredProcedure,
-                        CommandText = "OA_GetCommunicationPASink"
-                    };
-                    _Con.SqlCmd.Parameters.AddWithValue("@HadwareID", _GetPASink.id);
-                    _Con.SqlRead = _Con.SqlCmd.ExecuteReader();
-                    while (_Con.SqlRead.Read())
-                    {
-                        SendCurrentDeviceState(_Con.SqlRead.GetString(1) + "," + GetCurrentStatePA(_GetPASink.healthState.ToString()));
+                        _Con = new Connection();
+                        _Con.Connected();
+                        _Con.SqlCmd = new SqlCommand
+                        {
+                            Connection = _Con.SqlCon,
+                            CommandType = CommandType.StoredProcedure,
+                            CommandText = "OA_GetCommunicationPASink"
+                        };
+                        _Con.SqlCmd.Parameters.AddWithValue("@HadwareID", _GetPASink.id);
+                        _Con.SqlRead = _Con.SqlCmd.ExecuteReader();
+                        while (_Con.SqlRead.Read())
+                        {
+                            SendCurrentDeviceState(_Con.SqlRead.GetString(1) + "," + GetCurrentStatePA(_GetPASink.healthState.ToString()));
+                        }
+                        _Con.Disconnected();
                     }
-                    _Con.Disconnected();
-                }
-                catch (SqlException e)
-                {
-                    _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
+                    catch (SqlException e)
+                    {
+                        _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
+            }
+           
         }
         public override void onPaSourceUpdate(PaSource _DeviceSource)
         {
-            PaSource _PASource = new PaSource(_DeviceSource);
-            if (_ListHadwareSourceID.Contains(_PASource.id.ToString()))
+            try
             {
-                try
+                PaSource _PASource = new PaSource(_DeviceSource);
+                if (_ListHadwareSourceID.Contains(_PASource.id.ToString()))
                 {
-                    _Con = new Connection();
-                    _Con.Connected();
-                    _Con.SqlCmd = new SqlCommand
+                    try
                     {
-                        Connection = _Con.SqlCon,
-                        CommandType = CommandType.StoredProcedure,
-                        CommandText = "OA_GetCommunicationPASource"
-                    };
-                    _Con.SqlCmd.Parameters.AddWithValue("@HadwareID", _PASource.id);
-                    _Con.SqlRead = _Con.SqlCmd.ExecuteReader();
-                    while (_Con.SqlRead.Read())
-                    {
-                        SendCurrentDeviceState(_Con.SqlRead.GetString(1) + "," + GetCurrentStateMIC(_PASource.healthState.ToString()));
+                        _Con = new Connection();
+                        _Con.Connected();
+                        _Con.SqlCmd = new SqlCommand
+                        {
+                            Connection = _Con.SqlCon,
+                            CommandType = CommandType.StoredProcedure,
+                            CommandText = "OA_GetCommunicationPASource"
+                        };
+                        _Con.SqlCmd.Parameters.AddWithValue("@HadwareID", _PASource.id);
+                        _Con.SqlRead = _Con.SqlCmd.ExecuteReader();
+                        while (_Con.SqlRead.Read())
+                        {
+                            SendCurrentDeviceState(_Con.SqlRead.GetString(1) + "," + GetCurrentStateMIC(_PASource.healthState.ToString()));
+                        }
+                        _Con.Disconnected();
                     }
-                    _Con.Disconnected();
+                    catch (SqlException e)
+                    {
+                        _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
+                    }
                 }
-                catch (SqlException e)
-                {
-                    _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
-                }
+            }
+            catch (Exception e)
+            {
+                _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
             }
         }
         public override void onPaZoneUpdate(PaZone paZone)
         {
-            PaZone TempPAZone = new PaZone(paZone);
-            if (TempPAZone.activityText == "Active")
+            try
             {
-                Console.WriteLine(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss :") + "ZoneID : " + TempPAZone.id + " Active " + TempPAZone.announcementTypeText.ToString());
+                PaZone TempPAZone = new PaZone(paZone);
+                if (TempPAZone.activityText == "Active")
+                {
+                    Console.WriteLine(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss :") + "ZoneID : " + TempPAZone.id + " Active " + TempPAZone.announcementTypeText.ToString());
+                }
             }
+            catch (Exception e)
+            {
+                _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
+            }
+          
         }
         ~PAObserverClass()
         {

@@ -17,9 +17,26 @@ namespace Len.Jakpro.ClassOpenAccess
     {
         private readonly string _IPServer;
         private readonly int _Port;
-        private Logger _logger = LogManager.GetCurrentClassLogger();
+        private Logger _logger;
         private Connection _Con;
         private List<string> _ListHadwareID = new List<string>();
+        // Construct
+        public CallObserverClass(string IP, int Port)
+        {
+            try
+            {
+                _logger = LogManager.GetCurrentClassLogger();
+                _IPServer = IP;
+                _Port = Port;
+                GetTblDynamic("OA_GetDeviceVOIP", _ListHadwareID);
+                var _logging = new NLogConfigurator();
+                _logging.Configure();
+            }
+            catch (Exception e)
+            {
+                _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
+            }
+        }
         public int GetStateVOIP(string State)
         {
             if (State.Equals("PROGRESS"))
@@ -64,45 +81,36 @@ namespace Len.Jakpro.ClassOpenAccess
         }
         public void GetTblDynamic(string QueryProcedure, List<string> _ListHadwareID)
         {
-            _Con = new Connection();
-            _Con.Connected();
-            _Con.SqlCmd = new SqlCommand
-            {
-                Connection = _Con.SqlCon,
-                CommandType = CommandType.StoredProcedure,
-                CommandText = QueryProcedure
-            };
+          
             try
             {
+                _Con = new Connection();
+                _Con.Connected();
+                _Con.SqlCmd = new SqlCommand
+                {
+                    Connection = _Con.SqlCon,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = QueryProcedure
+                };
                 _Con.SqlRead = _Con.SqlCmd.ExecuteReader();
                 while (_Con.SqlRead.Read())
                 {
                     _ListHadwareID.Add(_Con.SqlRead.GetValue(0).ToString());
                 }
+                _Con.Disconnected();
             }
             catch (SqlException e)
             {
                 _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
             }
         }
-        // Construct
-        public CallObserverClass(string IP, int Port)
-        {
-            _IPServer = IP;
-            _Port = Port;
-            GetTblDynamic("OA_GetDeviceVOIP", _ListHadwareID);
-            var _logging = new NLogConfigurator();
-            _logging.Configure();
-        }
-        ~CallObserverClass()
-        {
-           
-        }
+       
+     
         public override void onCallUpdate(CallInfo _CallInfo)
-        {
-            CallInfo _Status = new CallInfo(_CallInfo);
+        {           
             try
             {
+                CallInfo _Status = new CallInfo(_CallInfo);
                 if (_ListHadwareID.Contains(_Status.callAPartyId.ToString()))
                 {
                     _Con = new Connection();
@@ -145,6 +153,11 @@ namespace Len.Jakpro.ClassOpenAccess
                 _logger.Error(DateTime.Now.ToString("dd-MM-yyyy : hh:mm:ss : ") + string.Concat(e.StackTrace, e.Message));
             }
         
+        }
+
+        ~CallObserverClass()
+        {
+
         }
     }
 }

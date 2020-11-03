@@ -1,6 +1,7 @@
 ﻿using NLog;
 using NLog.Config;
 using NLog.Targets;
+using System;
 
 namespace Len.Jakpro.OpenAccess.Logging
 {
@@ -18,7 +19,11 @@ namespace Len.Jakpro.OpenAccess.Logging
         {
             string addInName = this.GetType().Assembly.GetName().Name;
 
-            _logFileNamePattern = "${specialfolder:folder=CommonApplicationData}/Company/zenon/Len.Jakpro.OpenAccess.Log/${processname}_" + addInName  + ".log";
+
+            _logLayoutPattern = @"Time Stamp: ${time} ${newline} Message: ${callsite} ${message} ${onexception:Exception information\:${exception:format=type,message,method,StackTrace:maxInnerExceptionLevel=5:innerFormat=type,message,method,StackTrace ${newline} ${newline}";
+            _logFileNamePattern = "${specialfolder:folder=CommonApplicationData}/Company/zenon/Len.Jakpro.OpenAccess.Driver/${processname}_" + addInName + DateTime.Now.ToLongDateString() + ".log";
+
+
 
             /* Layout of LogNetspireMessages:
              * See: https://github.com/nlog/NLog/wiki/Layout-Renderers

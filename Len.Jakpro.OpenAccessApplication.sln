@@ -42,6 +42,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Len.Jakpro.TrainPosDriverSimulation", "Len.Jakpro.TrainPosDriverSimulation\Len.Jakpro.TrainPosDriverSimulation.csproj", "{1AA71EE8-5051-4584-B51F-4D152FA37AA8}"
 EndProject
 Global
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
